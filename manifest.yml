@@ -1,0 +1,19 @@
+modules:
+  jira:issuePanel:
+    - key: jira-ai-planner-hello-world-issue-panel
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: Jira AI-planner
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs20.x
+  id: ari:cloud:ecosystem::app/ddabf69f-88a6-4255-ae9f-b6c392bf7014
