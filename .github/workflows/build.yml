@@ -1,0 +1,50 @@
+# this build pipeline would be modified as work progresses
+name: Lint React Frontend and NodeJS Backend
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.18.0
+
+      - name: Install dependencies for React frontend
+        working-directory: .
+        run: npm install
+
+      - name: Run linting for React frontend
+        working-directory: ./frontend
+        run: npm run lint
+
+  lint-backend:
+    runs-on: ubuntu-latest
+    needs: lint-frontend
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.18.0
+
+      - name: Install dependencies for Node.js backend
+        working-directory: .
+        run: npm install
+
+      - name: Run linting for Node.js backend
+        working-directory: ./backend
+        run: npm run lint
