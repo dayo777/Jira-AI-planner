@@ -46,5 +46,5 @@ jobs:
         run: npm install
 
       - name: Run linting for Node.js backend
-        working-directory: src/backend
+        working-directory: src/resolvers
         run: npm run lint
