@@ -24,11 +24,7 @@ Our project aims to save time and costs in project planning by using an AI solut
 - Modify app backend by editing the `src/resolvers/index.js` file to define resolver functions. See [Forge resolvers](https://developer.atlassian.com/platform/forge/runtime-reference/custom-ui-resolver/) for documentation on resolver functions.
 
 
-## Team members
-@dayo777 (DevOps)
-@Uzakun (Frontend)
-
-
 
 ### Notes
-
+## intended flow structure
+![Flow structure](flow.png)
