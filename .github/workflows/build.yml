@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Run linting for React frontend
-        working-directory: frontend
+        working-directory: src/frontend
         run: npm run lint
 
   lint-backend:
@@ -46,5 +46,5 @@ jobs:
         run: npm install
 
       - name: Run linting for Node.js backend
-        working-directory: backend
+        working-directory: src/backend
         run: npm run lint
