@@ -1,22 +1,29 @@
-## Suggested Json format.
+## Suggested JSON transfer formats.
+
+ ``` 
+    1. the front-end json (sends data to the backend system)
+    2. back-end json (sends the data received to the AI endpoint) 
+    3. AI generates a list of tasks & sub-tasks. Each task is sent to a lambda function.
+    4. Lambda function sends each task & sub-task to the frontend/backend system. 
+```
 
 ---
 ## Front-end API json format
-{
-    "project": "I want to build an online school management system",
-    <!-- users should be able to specify a timeframe or specify the timeline. -->
-    "timeline": "3 months", // DD/MM/YYYY
-    <!-- "team_size": 10 -->
-}
 
- <!-- 
-    the front-end json (sends data to the backend system)
-    back-end json (sends the data received to the AI endpoint) 
-    AI (AI generates a list of tasks & sub-tasks. Each task is sent to a lambda function to create a task on the Kanban board.)
-    lambda system (create a task alongside the associated subtasks on the kanban board)   
-    -->
+> timeline data is in weeks e.g. 30 weeks, 21 weeks etc.
+```
+
+```json
+{
+    "project": "Develop a cross-platform mobile application that acts as a virtual health assistant, helping users track their health, provide personalized wellness tips, and assist with minor medical consultations using AI.",
+    "timeline": "10",
+}
+```
+
+
 
 ## AI endpoint returned json data format containing different task items
+```json
 [
     {
         "number": 1,
@@ -145,3 +152,4 @@
         "tags": [""planning", "rbac", "authorization"],
     },
 ]
+```
