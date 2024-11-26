@@ -27,4 +27,4 @@ Our project aims to save time and costs in project planning by using an AI solut
 
 ### Notes
 ## intended flow structure
-![Flow structure](flow.png)
+![Flow structure](flow.jpg)
