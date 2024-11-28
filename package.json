@@ -3,6 +3,7 @@
   "version": "1.0.39",
   "main": "index.js",
   "license": "MIT",
+  "type": "module",
   "private": true,
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/**/*"
@@ -15,6 +16,9 @@
     "@forge/bridge": "4.1.0",
     "@forge/react": "10.7.0",
     "@forge/resolver": "1.6.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.3",
     "react": "^18.2.0"
   }
 }
