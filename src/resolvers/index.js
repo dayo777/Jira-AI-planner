@@ -1,11 +1,23 @@
-// Back-end code goes here
-import Resolver from '@forge/resolver';
+import { storage } from '@forge/api';
 
-const resolver = new Resolver();
+// Define the resolver function to store project data
+export const resolvers = {
+  Mutation: {
+    async storeProjectData(_, { input }) {
+      const { project, timeline } = input;
 
-resolver.define('getText', (req) => {
-  console.log(req);
-  return 'Hello, world!';
-});
+      // Validate inputs (optional)
+      if (!project || !timeline) {
+        throw new Error('Project and timeline are required!');
+      }
 
-export const handler = resolver.getDefinitions();
+      // Save data in Forge storage
+      await storage.set('projectData', { project, timeline });
+
+      return {
+        success: true,
+        message: 'Project data stored successfully!',
+      };
+    },
+  },
+};

@@ -1,0 +1,16 @@
+type Mutation {
+  # Define a mutation for storing project data
+  storeProjectData(input: StoreProjectInput!): StoreProjectResponse
+}
+
+# Input type for storing project data
+input StoreProjectInput {
+  project: String!
+  timeline: String!
+}
+
+# Response type for the mutation
+type StoreProjectResponse {
+  success: Boolean!
+  message: String
+}

@@ -7,13 +7,24 @@ modules:
       render: native
       title: Jira AI-planner
       icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+
   function:
     - key: resolver
       handler: index.handler
+
 resources:
   - key: main
     path: src/frontend/index.jsx
+
 app:
   runtime:
     name: nodejs20.x
   id: ari:cloud:ecosystem::app/ddabf69f-88a6-4255-ae9f-b6c392bf7014
+
+permissions:
+  scopes:
+    - storage:app                # Required to use Forge storage API
+    - read:jira-work             # To read Jira issue data
+    - write:jira-work            # To write to Jira issue fields
+    - manage:jira-project        # To manage project-related data (if applicable)
+
