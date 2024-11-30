@@ -5,15 +5,15 @@ import { useAuth } from "../store/auth";
 
 export const Register = () => {
   const [user, setUser] = useState({
-    UserName: "",
-    Email: "",
+    Pdesc: "",
+    Timeline: "",
   });
 
 
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const {storeTokenInLS} = useAuth();
+  // const { storeTokenInLS } = useAuth();
 
 
 
@@ -34,15 +34,7 @@ export const Register = () => {
       <section>
         <main>
           <div className="section-registration">
-            <div className="container grid grid-two-cols">
-              <div className="registration-image reg-img">
-                <img
-                  src="/Images/Regi&LPage.png"
-                  alt="A Picture About Mental Health"
-                  width="400"
-                  height="500"
-                />
-              </div>
+            <div className="container">
 
               {/* Registration code  */}
               <div className="registration-form">
@@ -50,29 +42,30 @@ export const Register = () => {
                 <br />
                 <form onSubmit={handleSubmit}>
                   <div>
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="Pdesc">Project Description</label>
                     <input
                       type="text"
-                      name="UserName"
-                      id="username"
+                      name="time"
+                      id="Pdesc"
                       required
                       autoComplete="off"
-                      value={user.UserName}
+                      value={user.Pdesc}
                       onChange={handleInput}
-                      placeholder="username"
+                      placeholder="Project Description"
                     />
                   </div>
+
                   <div>
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="Timeline">Timeline - in weeks</label>
                     <input
                       type="text"
-                      name="Email"
-                      id="email"
+                      name="Timeline"
+                      id="Timeline"
                       required
                       autoComplete="off"
-                      value={user.Email}
+                      value={user.Timeline}
                       onChange={handleInput}
-                      placeholder="email"
+                      placeholder="Timeline - in weeks"
                     />
                   </div>
                   <br />

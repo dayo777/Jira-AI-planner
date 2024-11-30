@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
-import { toast } from "react-toastify";
 
 export const Login = () => {
     const [user, setUser] = useState({
-        Email: "",
+        Pdesc: "",
         Password: "",
     })
 
-    const navigate = useNavigate();
-    const {storeTokenInLS} = useAuth();
+    // const navigate = useNavigate();
+    // const {storeTokenInLS} = useAuth();
 
     const handleInput = (e) => {
         let name = e.target.name;
@@ -26,15 +25,7 @@ export const Login = () => {
     return <><section>
         <main>
             <div className="section-login">
-                <div className="container grid grid-two-cols">
-                    <div className="login-image reg-img">
-                        <img
-                            src="/Images/Login.png"
-                            alt="A Picture About Mental Health"
-                            width="460"
-                            height="450"
-                        />
-                    </div>
+                <div className="container">
 
                     {/* login code  */}
                     <div className="login-form">
@@ -43,30 +34,31 @@ export const Login = () => {
                         <form onSubmit={handleSubmit}>
 
                             <div>
-                                <label htmlFor="email">Email</label>
+                                <label htmlFor="Pdesc">Project Description</label>
                                 <input
                                     type="text"
-                                    name="Email"
-                                    id="email"
+                                    name="Pdesc"
+                                    id="Pdesc"
                                     required
                                     autoComplete="off"
-                                    value={user.Email}
+                                    value={user.Pdesc}
                                     onChange={handleInput}
-                                    placeholder="email"
+                                    placeholder="Project Description"
                                 />
                             </div>
 
+
                             <div>
-                                <label htmlFor="password">Password</label>
+                                <label htmlFor="Timeline">Timeline - in weeks</label>
                                 <input
-                                    type="password"
-                                    name="Password"
-                                    id="password"
+                                    type="text"
+                                    name="Timeline"
+                                    id="Timeline"
                                     required
                                     autoComplete="off"
-                                    value={user.Password}
+                                    value={user.Timeline}
                                     onChange={handleInput}
-                                    placeholder="password"
+                                    placeholder="Timeline - in weeks"
                                 />
                             </div>
                             <br />
