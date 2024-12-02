@@ -1,15 +1,13 @@
 ## Jira AI-planner (Atlassian Codegeist 2024)
 
-This extension provides a tool to assist project managers, team leaders, and anyone in effectively planning and structuring their tasks to achieve their project goals.
+This Jira extension uses AI to assist project managers, team leaders, or anyone in creating a base plan to begin working on their project idea by creating work items or tasks list on Jira. The output on Jira can easily be reviewed and modified to suit the project objectives. 
 
 ## How it works
-Our project aims to save time and costs in project planning by using an AI solution that takes user inputs to generate a project plan with Kanban boards. These AI-driven features enhance productivity, efficiency, and decision-making within a software development team's Jira workflow, and the Jira AI planner can be customized to fit the product design.
+Our project aims to save time and costs in project planning by using an AI solution that takes user inputs to generate a project plan on Kanban boards. These AI-driven features enhance productivity, efficiency, and decision-making within a software development team's Jira workflow, and the Jira AI planner can be customized to fit the product design.
 
 ### Inputs:
-- Rough idea of the project idea, scope and what you want to build in natural language.
-- Project timeline.
-- No of team members working on the project.
-- (Optional) Technology stack intended for use in the project.
+- Detailed description of the project you want to work on.
+- Project timeline in weeks.
 
 ### Outputs:
 - AI generated kanban board layouts with high-level tasks and sub-tasks required to achieve the project goals within the specified timeline.
@@ -18,11 +16,10 @@ Our project aims to save time and costs in project planning by using an AI solut
 
 
 ## Developer refs
+- To accelerate development & save time, we used a pre-built AI solution (AWS Sagemaker).
+- Structure flow (Frontend -> API Gateway -> AWS Lambda -> SageMaker endpoint)
 
-- Modify frontend by editing the `src/frontend/index.jsx` file.
-
-- Modify app backend by editing the `src/resolvers/index.js` file to define resolver functions. See [Forge resolvers](https://developer.atlassian.com/platform/forge/runtime-reference/custom-ui-resolver/) for documentation on resolver functions.
-
+![aws flow](1diagram.jpg)
 
 
 ### Notes
