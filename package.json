@@ -5,16 +5,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "npx eslint src/**/*",
-    "start": "react-scripts start"
+    "lint": "./node_modules/.bin/eslint src/**/*"
+    
   },
   "devDependencies": {
     "eslint": "^8.56.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
+      "eslint-plugin-react-hooks": "^4.6.0",
     "node-polyfill-webpack-plugin": "^4.0.0"
   },
   "dependencies": {
-    "@forge/api": "^4.1.1",
+      "@forge/api": "^4.1.1",
     "@forge/bridge": "4.1.0",
     "@forge/react": "10.7.0",
     "@forge/resolver": "1.6.1",
@@ -36,3 +36,4 @@
     ]
   }
 }
+
